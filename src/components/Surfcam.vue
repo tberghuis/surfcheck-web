@@ -14,14 +14,8 @@ export default {
     camUrl: String
   },
   mounted: function() {
-    // `this` points to the vm instance
-    console.log("surfcam is: " + this.camUrl);
-
     var video = this.$refs.video;
 
-    console.log("video", video);
-
-    // var videoSrc = "https://cams.cdn-surfline.com/cdn-au/au-lennoxhead/playlist.m3u8";
     if (Hls.isSupported()) {
       var hls = new Hls();
       hls.loadSource(this.camUrl);
